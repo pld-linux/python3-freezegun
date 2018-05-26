@@ -1,0 +1,25 @@
+--- freezegun-0.3.10/tests/test_ticking.py.orig	2018-03-06 01:33:10.000000000 +0100
++++ freezegun-0.3.10/tests/test_ticking.py	2018-05-26 16:55:23.937804778 +0200
+@@ -1,6 +1,9 @@
+ import datetime
+ import time
+-import mock
++try:
++    import mock
++except ImportError:
++    from unittest import mock
+ 
+ from freezegun import freeze_time
+ from tests import utils
+--- freezegun-0.3.10/tests/test_utils.py.orig	2018-03-06 01:33:10.000000000 +0100
++++ freezegun-0.3.10/tests/test_utils.py	2018-05-26 16:56:12.857804217 +0200
+@@ -1,4 +1,8 @@
+-import mock
++try:
++    import mock
++except ImportError:
++    from unittest import mock
++
+ from nose.plugins import skip
+ 
+ from freezegun import api
