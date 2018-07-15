@@ -15,6 +15,7 @@ Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/f/freezegun/freezegun-%{version}.tar.gz
 # Source0-md5:	703b64446743c0d9f81ca9308e5097a0
 Patch0:		%{name}-mock.patch
+Patch1:		%{name}-python3.7.patch
 URL:		https://pypi.org/project/freezegun/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -66,6 +67,7 @@ czasie dzięki atrapie modułu datetime.
 %prep
 %setup -q -n freezegun-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %if %{with python2}
