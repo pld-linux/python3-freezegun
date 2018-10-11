@@ -25,6 +25,7 @@ BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-dateutil >= 2.1
 BuildRequires:	python-mock
+BuildRequires:	python-modules-sqlite
 BuildRequires:	python-nose
 BuildRequires:	python-six
 %endif
