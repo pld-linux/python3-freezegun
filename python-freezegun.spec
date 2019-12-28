@@ -7,38 +7,38 @@
 Summary:	FreezeGun: Let your Python 2 tests travel through time
 Summary(pl.UTF-8):	FreezeGun - umożliwienie testom Pythona 2 podróżowania w czasie
 Name:		python-freezegun
-Version:	0.3.11
-Release:	2
+Version:	0.3.12
+Release:	1
 License:	Apache v2.0
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/freezegun/
 Source0:	https://files.pythonhosted.org/packages/source/f/freezegun/freezegun-%{version}.tar.gz
-# Source0-md5:	f4914cb716505cb8067b5ceec7acbba8
+# Source0-md5:	7a289a0473100e726335ea26fb0ef8de
 Patch0:		%{name}-mock.patch
 URL:		https://pypi.org/project/freezegun/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
-BuildRequires:	python-modules >= 1:2.6
+BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-dateutil >= 2.1
 BuildRequires:	python-mock
 BuildRequires:	python-modules-sqlite
-BuildRequires:	python-nose
+BuildRequires:	python-pytest
 BuildRequires:	python-six
 %endif
 %endif
 %if %{with python3}
-BuildRequires:	python3-modules >= 1:3.3
+BuildRequires:	python3-modules >= 1:3.4
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-dateutil >= 2.1
-BuildRequires:	python3-nose
+BuildRequires:	python3-pytest
 BuildRequires:	python3-six
 %endif
 %endif
-Requires:	python-modules >= 1:2.6
+Requires:	python-modules >= 1:2.7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -54,7 +54,7 @@ czasie dzięki atrapie modułu datetime.
 Summary:	FreezeGun: Let your Python 3 tests travel through time
 Summary(pl.UTF-8):	FreezeGun - umożliwienie testom Pythona 3 podróżowania w czasie
 Group:		Libraries/Python
-Requires:	python3-modules >= 1:3.3
+Requires:	python3-modules >= 1:3.4
 
 %description -n python3-freezegun
 FreezeGun is a library that allows your Python tests to travel through
@@ -73,7 +73,7 @@ czasie dzięki atrapie modułu datetime.
 %py_build
 
 %if %{with tests}
-nosetests-%{py_ver} tests
+%{__python} -m pytest tests
 %endif
 %endif
 
@@ -81,7 +81,7 @@ nosetests-%{py_ver} tests
 %py3_build
 
 %if %{with tests}
-nosetests-%{py3_ver} tests
+%{__python3} -m pytest tests
 %endif
 %endif
 
