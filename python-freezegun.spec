@@ -7,6 +7,7 @@
 Summary:	FreezeGun: Let your Python 2 tests travel through time
 Summary(pl.UTF-8):	FreezeGun - umożliwienie testom Pythona 2 podróżowania w czasie
 Name:		python-freezegun
+# keep 0.3.x here for python3 support
 Version:	0.3.15
 Release:	2
 License:	Apache v2.0
@@ -71,6 +72,7 @@ czasie dzięki atrapie modułu datetime.
 %py_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python} -m pytest tests
 %endif
 %endif
@@ -79,6 +81,7 @@ czasie dzięki atrapie modułu datetime.
 %py3_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python3} -m pytest tests
 %endif
 %endif
