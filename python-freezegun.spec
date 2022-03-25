@@ -9,7 +9,7 @@ Summary(pl.UTF-8):	FreezeGun - umożliwienie testom Pythona 2 podróżowania w c
 Name:		python-freezegun
 # keep 0.3.x here for python3 support
 Version:	0.3.15
-Release:	3
+Release:	4
 License:	Apache v2.0
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/freezegun/
