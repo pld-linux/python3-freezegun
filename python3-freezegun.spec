@@ -37,7 +37,7 @@ czasie dzięki atrapie modułu datetime.
 
 %prep
 %setup -q -n freezegun-%{version}
-%patch0 -p1
+%patch -P 0 -p1
 
 %build
 %py3_build
