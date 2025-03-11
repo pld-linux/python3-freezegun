@@ -6,7 +6,7 @@ Summary:	FreezeGun: Let your Python 2 tests travel through time
 Summary(pl.UTF-8):	FreezeGun - umożliwienie testom Pythona 2 podróżowania w czasie
 Name:		python3-freezegun
 Version:	1.2.2
-Release:	2
+Release:	3
 License:	Apache v2.0
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/freezegun/
