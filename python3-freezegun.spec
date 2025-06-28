@@ -5,16 +5,15 @@
 Summary:	FreezeGun: Let your Python 2 tests travel through time
 Summary(pl.UTF-8):	FreezeGun - umożliwienie testom Pythona 2 podróżowania w czasie
 Name:		python3-freezegun
-Version:	1.5.1
+Version:	1.5.2
 Release:	1
 License:	Apache v2.0
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/freezegun/
 Source0:	https://files.pythonhosted.org/packages/source/f/freezegun/freezegun-%{version}.tar.gz
-# Source0-md5:	fb7324aaa31c6fafabf16a623cc62e38
-Patch0:		python3.13.patch
+# Source0-md5:	b372e78b608c66efdb829fc4a8fdf608
 URL:		https://pypi.org/project/freezegun/
-BuildRequires:	python3-modules >= 1:3.7
+BuildRequires:	python3-modules >= 1:3.8
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-dateutil >= 2.7
@@ -22,7 +21,7 @@ BuildRequires:	python3-pytest
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
-Requires:	python3-modules >= 1:3.7
+Requires:	python3-modules >= 1:3.8
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,7 +35,6 @@ czasie dzięki atrapie modułu datetime.
 
 %prep
 %setup -q -n freezegun-%{version}
-%patch -P0 -p1
 
 %build
 %py3_build
